@@ -1,0 +1,168 @@
+$background-color: #FFFFFF;
+
+:host {
+  font-family: Arial, serif;
+  padding: 4px;
+  margin: 0;
+  height: 95vh;
+  overflow: hidden;
+  display: block;
+  border: 1px gray solid;
+  border-radius: 24px;
+  background: $background-color;
+}
+
+img {
+  border-radius: 10px;
+}
+
+$headerHeight: 50;
+
+.header {
+
+  height: $headerHeight + px;
+
+  .title {
+    font-size: 16px;
+    margin: 8px;
+  }
+
+  input {
+    display: inline-block;
+  }
+
+  .error {
+    color: red;
+    display: inline-block;
+  }
+
+}
+
+$imgWidth: 400;
+$imgWidthPx: $imgWidth + px;
+
+$productImgWidth: 64;
+$productImgWidthPx: $productImgWidth + px;
+
+.results {
+  display: table;
+  height: calc(100% - (#{$headerHeight + px}));
+
+  .image {
+    width: 50%;
+    display: table-cell;
+    vertical-align: middle;
+    padding-right: 16px;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  .product-list {
+    width: 100%;
+    display: table-cell;
+
+    .title {
+      height: 20px;
+    }
+
+    .scroll-area {
+      max-height: calc(100% - 20px);
+      overflow-y: scroll;
+
+
+      .product {
+        display: table;
+
+        .product-image {
+          display: table-cell;
+          width: $productImgWidthPx;
+
+          img {
+            max-width: $productImgWidthPx;
+            max-height: $productImgWidthPx;
+            vertical-align: middle;
+            margin: 4px;
+          }
+        }
+
+        a {
+          display: table-cell;
+        }
+      }
+    }
+
+
+
+  }
+
+}
+
+$loader-color: #929292;
+
+.loader {
+  font-size: 10px;
+  margin: 50px auto;
+  text-indent: -9999em;
+  width: 11em;
+  height: 11em;
+  border-radius: 50%;
+  background: $loader-color;
+  background: linear-gradient(to right, $loader-color 10%, rgba(146, 146, 146, 0) 42%);
+  position: relative;
+  -webkit-animation: load3 1.4s infinite linear;
+  animation: load3 1.4s infinite linear;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+
+  &:before {
+    width: 50%;
+    height: 50%;
+    background: $loader-color;
+    border-radius: 100% 0 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+  }
+
+  &:after {
+    background: $background-color;
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    content: '';
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  @-webkit-keyframes load3 {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes load3 {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+
+}

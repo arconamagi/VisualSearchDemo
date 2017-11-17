@@ -75,7 +75,7 @@ export class WebService {
     if (!body) {
       throw Error('Error received from the API')
     }
-    return body.response || {};
+    return body;
   }
 
 }

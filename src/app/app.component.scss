@@ -4,8 +4,6 @@ $background-color: #FFFFFF;
   font-family: Arial, serif;
   padding: 4px;
   margin: 0;
-  height: 95vh;
-  overflow: hidden;
   display: block;
   border: 1px gray solid;
   border-radius: 24px;
@@ -38,63 +36,67 @@ $headerHeight: 50;
 
 }
 
-$imgWidth: 400;
+$imgWidth: 100;
 $imgWidthPx: $imgWidth + px;
 
-$productImgWidth: 64;
+$productImgWidth: 80;
 $productImgWidthPx: $productImgWidth + px;
 
 .results {
-  display: table;
-  height: calc(100% - (#{$headerHeight + px}));
 
   .image {
-    width: 50%;
-    display: table-cell;
-    vertical-align: middle;
-    padding-right: 16px;
+    width: 100%;
 
     img {
-      max-width: 100%;
-      max-height: 100%;
+      width: 100%;
     }
   }
 
   .product-list {
-    width: 100%;
-    display: table-cell;
-
     .title {
-      height: 20px;
+      margin-top: 10px;
     }
 
-    .scroll-area {
-      max-height: calc(100% - 20px);
-      overflow-y: scroll;
+    .product-list-container {
+      width: 100%;
+      display: table;
 
+      .product-image {
+        width: $imgWidthPx;
+        height: $imgWidthPx;
+        display: table-cell;
+        vertical-align: middle;
 
-      .product {
-        display: table;
+        img {
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
 
-        .product-image {
-          display: table-cell;
-          width: $productImgWidthPx;
+      .scroll-area {
+        display: table-cell;
+        vertical-align: middle;
 
-          img {
-            max-width: $productImgWidthPx;
-            max-height: $productImgWidthPx;
+        .found-products {
+          display: table;
+
+          .found-product {
+            display: table-cell;
             vertical-align: middle;
-            margin: 4px;
+            width: $productImgWidthPx;
+            height: $productImgWidthPx;
+
+            img {
+              max-width: 100%;
+              max-height: 100%;
+              margin: 4px;
+            }
           }
         }
 
-        a {
-          display: table-cell;
-        }
       }
+
     }
-
-
 
   }
 

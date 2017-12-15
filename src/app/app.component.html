@@ -13,15 +13,27 @@
   </div>
 
   <div class="product-list">
-    <div class="title">List of products</div>
-    <div class="scroll-area">
-      <a class="product" [href]="product.url" target="_blank"
-           *ngFor="let product of uploadResponse.products">
-        <div class="product-image">
-          <img [src]="product.product_image">
+    <div class="title">Found products</div>
+    <div class="product-list-container"
+         *ngFor="let product of uploadResponse.products">
+
+      <div class="product-image">
+        <img [src]="product.cut_image">
+      </div>
+
+      <div class="scroll-area">
+        <div class="found-products">
+          <a class="found-product"
+             *ngFor="let found_product of product.found_products"
+             [href]="found_product.url"
+             [title]="found_product.url"
+             target="_blank">
+
+            <img [src]="found_product.product_image">
+          </a>
         </div>
-        <div>{{product.url | slice:27}}</div>
-      </a>
+      </div>
+
     </div>
 
   </div>
